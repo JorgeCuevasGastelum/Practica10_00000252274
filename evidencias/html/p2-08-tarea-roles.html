@@ -1,0 +1,62 @@
+<!doctype html><html lang="es"><meta charset="utf-8"><title>Tarea: sólo entrenador y admin cancelan (RolesGuard + @Roles)</title><style>
+*{box-sizing:border-box}body{font:15px system-ui,sans-serif;margin:0;padding:32px;background:#eef2f6;color:#152434}
+header{margin-bottom:20px}h1{font-size:28px;margin:6px 0}header p{color:#46566a;margin:4px 0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+article{background:#fff;border:1px solid #ccd5df;border-radius:12px;padding:20px}
+h2{font-size:17px;margin:0 0 12px}h3{font-size:13px;color:#46566a;margin:14px 0 6px}
+.ruta{font-family:Consolas,monospace;font-weight:bold;color:#155b71;margin:0}
+.s2{color:#1a7f37}.s4{color:#b3261e}.s5{color:#b3261e}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f6f9;border-radius:6px;padding:12px;font:12.5px/1.5 Consolas,monospace;margin:0}
+.nota{background:#fff8e1;border:1px solid #f0d68a;border-radius:8px;padding:12px 14px;margin-top:16px}
+footer{margin-top:20px;color:#46566a;font-size:12px}
+.jwt span{font:14px/1.6 Consolas,monospace;overflow-wrap:anywhere}.h{color:#d63aff}.p{color:#00a3c4}.f{color:#fb015b}
+</style><header><p>PRÁCTICA 10 · Jorge Cuevas Gastelum · 00000252274</p><h1>Tarea: sólo entrenador y admin cancelan (RolesGuard + @Roles)</h1><p>La misma ruta DELETE /inscripciones/1: sin token 401, con miembro 403, con entrenador 200.</p></header>
+<main><div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr))"><article><h2>T-01 Cancelar sin token</h2>
+<p class="ruta">DELETE /inscripciones/1 → <b class="s4">HTTP 401</b></p>
+<h3>Petición</h3><pre>{
+  "headers": {}
+}</pre>
+<h3>Encabezados de respuesta</h3><pre>access-control-expose-headers: Location,X-Request-Id
+content-type: application/json; charset=utf-8
+x-request-id: 645a121c-067d-40f3-961f-caa2e059eb29</pre>
+<h3>Cuerpo de respuesta</h3><pre>{
+  "message": "Unauthorized",
+  "statusCode": 401
+}</pre></article><article><h2>T-02 Cancelar con miembro</h2>
+<p class="ruta">DELETE /inscripciones/1 → <b class="s4">HTTP 403</b></p>
+<h3>Petición</h3><pre>{
+  "headers": {
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXV…"
+  }
+}</pre>
+<h3>Encabezados de respuesta</h3><pre>access-control-expose-headers: Location,X-Request-Id
+content-type: application/json; charset=utf-8
+x-request-id: 573c0adb-0daf-40c3-ba1e-35f26f9ddc4f</pre>
+<h3>Cuerpo de respuesta</h3><pre>{
+  "message": "Esta accion requiere rol: entrenador o admin",
+  "error": "Forbidden",
+  "statusCode": 403
+}</pre></article><article><h2>T-03 Cancelar con entrenador</h2>
+<p class="ruta">DELETE /inscripciones/1 → <b class="s2">HTTP 200</b></p>
+<h3>Petición</h3><pre>{
+  "headers": {
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXV…"
+  }
+}</pre>
+<h3>Encabezados de respuesta</h3><pre>access-control-expose-headers: Location,X-Request-Id
+content-type: application/json; charset=utf-8
+x-request-id: 023385c1-c3c9-4948-9b7c-6fe007c323f4</pre>
+<h3>Cuerpo de respuesta</h3><pre>{
+  "data": {
+    "id": 1,
+    "horarioId": 1,
+    "miembroId": 1,
+    "estado": "cancelada",
+    "creadaEn": "2026-10-06T03:18:01.716Z"
+  },
+  "meta": {
+    "ruta": "/inscripciones/1",
+    "duracionMs": 7,
+    "timestamp": "2026-10-06T03:18:01.783Z"
+  }
+}</pre></article></div></main><footer>Generado por scripts/evidencias.cjs a partir de respuestas HTTP reales (npm test, NestJS + Prisma + MySQL) · 2026-10-06T03:18:03.965Z</footer></html>

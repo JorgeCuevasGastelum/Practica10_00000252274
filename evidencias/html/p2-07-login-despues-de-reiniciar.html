@@ -1,0 +1,83 @@
+<!doctype html><html lang="es"><meta charset="utf-8"><title>Inicio de sesión después de reiniciar el servidor</title><style>
+*{box-sizing:border-box}body{font:15px system-ui,sans-serif;margin:0;padding:32px;background:#eef2f6;color:#152434}
+header{margin-bottom:20px}h1{font-size:28px;margin:6px 0}header p{color:#46566a;margin:4px 0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+article{background:#fff;border:1px solid #ccd5df;border-radius:12px;padding:20px}
+h2{font-size:17px;margin:0 0 12px}h3{font-size:13px;color:#46566a;margin:14px 0 6px}
+.ruta{font-family:Consolas,monospace;font-weight:bold;color:#155b71;margin:0}
+.s2{color:#1a7f37}.s4{color:#b3261e}.s5{color:#b3261e}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f6f9;border-radius:6px;padding:12px;font:12.5px/1.5 Consolas,monospace;margin:0}
+.nota{background:#fff8e1;border:1px solid #f0d68a;border-radius:8px;padding:12px 14px;margin-top:16px}
+footer{margin-top:20px;color:#46566a;font-size:12px}
+.jwt span{font:14px/1.6 Consolas,monospace;overflow-wrap:anywhere}.h{color:#d63aff}.p{color:#00a3c4}.f{color:#fb015b}
+</style><header><p>PRÁCTICA 10 · Jorge Cuevas Gastelum · 00000252274</p><h1>Inicio de sesión después de reiniciar el servidor</h1><p>La cuenta se registra, el servidor se detiene y se vuelve a levantar, y el login sigue funcionando: el usuario está en MySQL.</p></header>
+<main><div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr))"><article><h2>P2-10 Registro de una cuenta nueva</h2>
+<p class="ruta">POST /auth/registro → <b class="s2">HTTP 201</b></p>
+<h3>Petición</h3><pre>{
+  "headers": {},
+  "body": {
+    "correo": "Luis@ITSON.mx",
+    "password": "secreto123"
+  }
+}</pre>
+<h3>Encabezados de respuesta</h3><pre>access-control-expose-headers: Location,X-Request-Id
+content-type: application/json; charset=utf-8
+x-request-id: 66992323-7331-46c7-871a-507c2324f07c</pre>
+<h3>Cuerpo de respuesta</h3><pre>{
+  "data": {
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImNvcnJlbyI6Imx1aXNAaXRzb24ubXgiLCJyb2wiOiJtaWVtYnJvIiwibWllbWJyb0lkIjpudWxsLCJpYXQiOjE3OTEyNTY2ODEsImV4cCI6MTc5MTI2MDI4MX0.mvIwEED5v2zLP3zHQtqsSmi-xYt6jsLTN69hR-AASuo",
+    "token_type": "Bearer",
+    "expires_in": 3600
+  },
+  "meta": {
+    "ruta": "/auth/registro",
+    "duracionMs": 78,
+    "timestamp": "2026-10-06T03:18:01.882Z"
+  }
+}</pre></article><article><h2>P2-15 Login de la cuenta registrada despues de reiniciar</h2>
+<p class="ruta">POST /auth/login → <b class="s2">HTTP 200</b></p>
+<h3>Petición</h3><pre>{
+  "headers": {},
+  "body": {
+    "correo": "luis@itson.mx",
+    "password": "secreto123"
+  }
+}</pre>
+<h3>Encabezados de respuesta</h3><pre>access-control-expose-headers: Location,X-Request-Id
+content-type: application/json; charset=utf-8
+x-request-id: 448b45a8-8661-491e-9799-2078adccc81c</pre>
+<h3>Cuerpo de respuesta</h3><pre>{
+  "data": {
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImNvcnJlbyI6Imx1aXNAaXRzb24ubXgiLCJyb2wiOiJtaWVtYnJvIiwibWllbWJyb0lkIjpudWxsLCJpYXQiOjE3OTEyNTY2ODMsImV4cCI6MTc5MTI2MDI4M30.eAvL3nZvhBv7aORy4RD72DM01tNonDNXuC4sMJxbngM",
+    "token_type": "Bearer",
+    "expires_in": 3600
+  },
+  "meta": {
+    "ruta": "/auth/login",
+    "duracionMs": 89,
+    "timestamp": "2026-10-06T03:18:03.888Z"
+  }
+}</pre></article><article><h2>P2-16 Persistencia de inscripciones despues de reiniciar</h2>
+<p class="ruta">GET /inscripciones/1 → <b class="s2">HTTP 200</b></p>
+<h3>Petición</h3><pre>{
+  "headers": {
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXV…"
+  }
+}</pre>
+<h3>Encabezados de respuesta</h3><pre>access-control-expose-headers: Location,X-Request-Id
+content-type: application/json; charset=utf-8
+x-request-id: 64cc00a6-01e9-4b6b-a9fe-e84bb8b55f38</pre>
+<h3>Cuerpo de respuesta</h3><pre>{
+  "data": {
+    "id": 1,
+    "horarioId": 1,
+    "miembroId": 1,
+    "estado": "confirmada",
+    "creadaEn": "2026-10-06T03:18:01.798Z"
+  },
+  "meta": {
+    "ruta": "/inscripciones/1",
+    "duracionMs": 3,
+    "timestamp": "2026-10-06T03:18:03.894Z"
+  }
+}</pre></article></div></main><footer>Generado por scripts/evidencias.cjs a partir de respuestas HTTP reales (npm test, NestJS + Prisma + MySQL) · 2026-10-06T03:18:03.965Z</footer></html>

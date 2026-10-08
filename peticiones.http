@@ -1,0 +1,164 @@
+### Practica 10 - Blindar la API, JWT y OpenAPI
+###
+### COMO SE USA:
+###   1. Extension "REST Client" (humao.rest-client) en VS Code.
+###   2. npx prisma migrate dev   (crea la tabla usuarios)
+###   3. npx prisma db seed       (OJO: borra y vuelve a llenar la base)
+###   4. npm run start:dev
+###   5. Correr primero los tres logins (A, B, C): guardan los tokens.
+###
+### El horario 1 tiene cupoMaximo = 2: las peticiones 3, 4 y 5 van EN ORDEN.
+### npm test repite todo en una base temporal sin tocar tus datos.
+
+@host = http://localhost:3000
+
+### ================= Iniciar sesion (guardan el token) =================
+
+### A. Karla, miembro 1  ->  200 { data: { access_token, ... } }
+# @name karla
+POST {{host}}/auth/login
+Content-Type: application/json
+
+{ "correo": "karla@itson.mx", "password": "gimnasio2026" }
+
+### B. Ana, entrenadora  ->  200
+# @name ana
+POST {{host}}/auth/login
+Content-Type: application/json
+
+{ "correo": "ana@itson.mx", "password": "gimnasio2026" }
+
+### C. Admin  ->  200
+# @name admin
+POST {{host}}/auth/login
+Content-Type: application/json
+
+{ "correo": "admin@itson.mx", "password": "gimnasio2026" }
+
+@tKarla = {{karla.response.body.data.access_token}}
+@tAna = {{ana.response.body.data.access_token}}
+@tAdmin = {{admin.response.body.data.access_token}}
+
+
+### ================= Parte 2: JWT =================
+
+### 1. Sin token  ->  401
+GET {{host}}/inscripciones
+
+
+### 2. Publica, sin token  ->  200 con { data, meta }
+GET {{host}}/clases
+
+
+### 3. Karla se inscribe a si misma  ->  201 + Location
+POST {{host}}/inscripciones
+Authorization: Bearer {{tKarla}}
+Content-Type: application/json
+
+{ "horarioId": 1, "miembroId": 1 }
+
+
+### 4. Karla intenta inscribir a Sofia (miembro 3)  ->  403
+POST {{host}}/inscripciones
+Authorization: Bearer {{tKarla}}
+Content-Type: application/json
+
+{ "horarioId": 2, "miembroId": 3 }
+
+
+### 5. La entrenadora inscribe a Omar, se llena el cupo  ->  201
+POST {{host}}/inscripciones
+Authorization: Bearer {{tAna}}
+Content-Type: application/json
+
+{ "horarioId": 1, "miembroId": 2 }
+
+
+### 6. Cupo lleno  ->  409 { statusCode, error: "CupoLlenoError", message, path, timestamp }
+POST {{host}}/inscripciones
+Authorization: Bearer {{tAdmin}}
+Content-Type: application/json
+
+{ "horarioId": 1, "miembroId": 3 }
+
+
+### 7. Lo que viene dentro del token  ->  200
+GET {{host}}/auth/yo
+Authorization: Bearer {{tKarla}}
+
+
+### 8. Mismo 401 con correo inexistente...
+POST {{host}}/auth/login
+Content-Type: application/json
+
+{ "correo": "nadie@itson.mx", "password": "gimnasio2026" }
+
+
+### 9. ...y con contrasena incorrecta
+POST {{host}}/auth/login
+Content-Type: application/json
+
+{ "correo": "karla@itson.mx", "password": "otra-cosa" }
+
+
+### 10. Registro  ->  201 con token (rol miembro por omision)
+POST {{host}}/auth/registro
+Content-Type: application/json
+
+{ "correo": "luis@itson.mx", "password": "secreto123" }
+
+
+### 11. Reiniciar el servidor y volver a entrar  ->  200 (vive en MySQL)
+POST {{host}}/auth/login
+Content-Type: application/json
+
+{ "correo": "luis@itson.mx", "password": "secreto123" }
+
+
+### ================= Tarea: roles =================
+
+### 12. Cancelar sin token  ->  401
+DELETE {{host}}/inscripciones/1
+
+
+### 13. Cancelar con miembro  ->  403
+DELETE {{host}}/inscripciones/1
+Authorization: Bearer {{tKarla}}
+
+
+### 14. Cancelar con entrenador  ->  200 estado "cancelada"
+DELETE {{host}}/inscripciones/1
+Authorization: Bearer {{tAna}}
+
+
+### ================= Parte 1: middleware, sobre, CORS =================
+
+### 15. X-Request-Id generado (ver encabezados)
+GET {{host}}/clases
+
+
+### 16. X-Request-Id que manda el cliente  ->  se respeta
+GET {{host}}/clases
+X-Request-Id: mi-peticion-123
+
+
+### 17. CORS permitido  ->  200 con Access-Control-Allow-Origin
+GET {{host}}/clases
+Origin: http://localhost:5173
+
+
+### 18. CORS no permitido  ->  200 SIN Access-Control-Allow-Origin
+GET {{host}}/clases
+Origin: http://localhost:4000
+
+
+### 19. Validacion sigue en 400 (no lleva sobre)
+POST {{host}}/inscripciones
+Authorization: Bearer {{tAdmin}}
+Content-Type: application/json
+
+{ "horarioId": "hola" }
+
+
+### 20. Documentacion: abrir en el navegador http://localhost:3000/docs
+GET {{host}}/docs-json

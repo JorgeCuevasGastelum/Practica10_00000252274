@@ -1,0 +1,82 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider     = "prisma-client"
+  output       = "../generated/prisma"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model Clase {
+  id          Int       @id @default(autoincrement())
+  nombre      String
+  descripcion String?   @db.Text
+  horarios    Horario[]
+
+  @@map("clase")
+}
+
+model Horario {
+  id            Int           @id @default(autoincrement())
+  claseId       Int
+  dia           String
+  horaInicio    String
+  cupoMaximo    Int
+  entrenador    String
+  clase         Clase         @relation(fields: [claseId], references: [id])
+  inscripciones Inscripcion[]
+
+  @@map("horario")
+}
+
+model Miembro {
+  id            Int           @id @default(autoincrement())
+  nombre        String
+  correo        String        @unique
+  membresia     String
+  activo        Boolean       @default(true)
+  inscripciones Inscripcion[]
+
+  @@map("miembro")
+}
+
+enum EstadoInscripcion {
+  confirmada
+  cancelada
+}
+
+model Inscripcion {
+  id        Int               @id @default(autoincrement())
+  horarioId Int
+  miembroId Int
+  estado    EstadoInscripcion @default(confirmada)
+  creadaEn  DateTime          @default(now())
+  horario   Horario           @relation(fields: [horarioId], references: [id])
+  miembro   Miembro           @relation(fields: [miembroId], references: [id])
+
+  @@unique([horarioId, miembroId])
+  @@map("inscripcion")
+}
+
+// rol va como texto para que el repositorio devuelva el mismo Rol del
+// dominio sin traducir entre dos enums.
+model Usuario {
+  id           Int      @id @default(autoincrement())
+  // @unique: no puede haber dos cuentas con el mismo correo
+  correo       String   @unique @db.VarChar(160)
+  // el hash de bcrypt, nunca la contrasena
+  passwordHash String   @db.VarChar(72)
+  rol          String   @default("miembro") @db.VarChar(20)
+  // ? = puede ser null (el personal no es miembro)
+  miembroId    Int?
+  creadoEn     DateTime @default(now())
+
+  // la tabla se llama usuarios
+  @@map("usuarios")
+}

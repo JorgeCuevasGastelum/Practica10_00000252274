@@ -1,0 +1,23 @@
+Experimento del Paso 2 (Parte 1): comentar next() en PeticionIdMiddleware
+=========================================================================
+
+Cambio temporal en dist/src/comun/middleware/peticion-id.middleware.js:
+
+        // next();
+
+Peticion:
+
+    curl -i -m 8 http://localhost:3111/clases
+
+Resultado:
+
+    curl: (28) timeout: 0 bytes recibidos en 8 segundos
+    curl exit = 28  (se corto por tiempo, no porque el servidor respondiera)
+
+    - No llego codigo de estado, ni encabezados, ni cuerpo.
+    - En la consola del servidor NO aparecio ningun error ni la linea [HTTP]:
+      la peticion nunca llego al controller, al interceptor ni al filtro.
+    - Ultima linea de la consola: "Nest application successfully started".
+
+Despues se regreso next() y la misma peticion responde 200 con X-Request-Id
+(ver evidencias/resultados.json, prueba "P1-08 X-Request-Id generado").

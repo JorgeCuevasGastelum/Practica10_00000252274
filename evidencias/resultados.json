@@ -1,0 +1,1973 @@
+{
+  "fecha": "2026-10-06T03:18:03.965Z",
+  "total": 58,
+  "concurrencia": [
+    201,
+    409,
+    409
+  ],
+  "jwtKarla": {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImNvcnJlbyI6ImthcmxhQGl0c29uLm14Iiwicm9sIjoibWllbWJybyIsIm1pZW1icm9JZCI6MSwiaWF0IjoxNzkxMjU2NjgxLCJleHAiOjE3OTEyNjAyODF9.jKqlp6hrWyn6Q8bDO5DlCh6EXyAQWm1DLJMUvARnGqI",
+    "header": {
+      "alg": "HS256",
+      "typ": "JWT"
+    },
+    "payload": {
+      "sub": 1,
+      "correo": "karla@itson.mx",
+      "rol": "miembro",
+      "miembroId": 1,
+      "iat": 1791256681,
+      "exp": 1791260281
+    },
+    "firma": "jKqlp6hrWyn6Q8bDO5DlCh6EXyAQWm1DLJMUvARnGqI"
+  },
+  "resultados": [
+    {
+      "title": "P2-01 GET /inscripciones sin token",
+      "method": "GET",
+      "route": "/inscripciones",
+      "requestHeaders": {},
+      "status": 401,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "43",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"2b-dGnJzt6gv1nJjX6DJ9RztDWptng\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "aea22d82-2fbc-4d0f-8fa7-81ad328f38e6"
+      },
+      "response": {
+        "message": "Unauthorized",
+        "statusCode": 401
+      }
+    },
+    {
+      "title": "P2-02 GET /clases es publica",
+      "method": "GET",
+      "route": "/clases",
+      "requestHeaders": {},
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "182",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"b6-9pR7AHRoiPSK2s9b1d71TiijUV0\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "9d2ff56d-d73a-4cac-9fe7-67732ebc107b"
+      },
+      "response": {
+        "data": [
+          {
+            "id": 1,
+            "nombre": "Yoga",
+            "descripcion": null
+          },
+          {
+            "id": 2,
+            "nombre": "Spinning",
+            "descripcion": null
+          }
+        ],
+        "meta": {
+          "ruta": "/clases",
+          "duracionMs": 2,
+          "timestamp": "2026-10-06T03:18:01.330Z"
+        }
+      }
+    },
+    {
+      "title": "P2-03 GET / es publica",
+      "method": "GET",
+      "route": "/",
+      "requestHeaders": {},
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "97",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"61-NFt+kltB8z4JmdDuZ2BH6Ap8STo\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "810d0107-9eae-4060-af3b-673a1dce3011"
+      },
+      "response": {
+        "data": "Hello World!",
+        "meta": {
+          "ruta": "/",
+          "duracionMs": 1,
+          "timestamp": "2026-10-06T03:18:01.332Z"
+        }
+      }
+    },
+    {
+      "title": "Login karla@itson.mx",
+      "method": "POST",
+      "route": "/auth/login",
+      "requestHeaders": {},
+      "body": {
+        "correo": "karla@itson.mx",
+        "password": "gimnasio2026"
+      },
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "366",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"16e-jT+XQ9JWJmjhft3OClypTgqEZ7k\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "968fd6ed-2b5e-414b-9405-49fcf252ccb8"
+      },
+      "response": {
+        "data": {
+          "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImNvcnJlbyI6ImthcmxhQGl0c29uLm14Iiwicm9sIjoibWllbWJybyIsIm1pZW1icm9JZCI6MSwiaWF0IjoxNzkxMjU2NjgxLCJleHAiOjE3OTEyNjAyODF9.jKqlp6hrWyn6Q8bDO5DlCh6EXyAQWm1DLJMUvARnGqI",
+          "token_type": "Bearer",
+          "expires_in": 3600
+        },
+        "meta": {
+          "ruta": "/auth/login",
+          "duracionMs": 95,
+          "timestamp": "2026-10-06T03:18:01.447Z"
+        }
+      }
+    },
+    {
+      "title": "Login ana@itson.mx",
+      "method": "POST",
+      "route": "/auth/login",
+      "requestHeaders": {},
+      "body": {
+        "correo": "ana@itson.mx",
+        "password": "gimnasio2026"
+      },
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "372",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"174-tLdRmOAnOfQTJa4vzmjjsj/pAoU\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "73521dd8-0e29-4870-be57-262a6bad6d41"
+      },
+      "response": {
+        "data": {
+          "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImNvcnJlbyI6ImFuYUBpdHNvbi5teCIsInJvbCI6ImVudHJlbmFkb3IiLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.3lventSzhJ_flXFA_1_yJEisfkruGfb1236-AQMaBfc",
+          "token_type": "Bearer",
+          "expires_in": 3600
+        },
+        "meta": {
+          "ruta": "/auth/login",
+          "duracionMs": 70,
+          "timestamp": "2026-10-06T03:18:01.519Z"
+        }
+      }
+    },
+    {
+      "title": "Login admin@itson.mx",
+      "method": "POST",
+      "route": "/auth/login",
+      "requestHeaders": {},
+      "body": {
+        "correo": "admin@itson.mx",
+        "password": "gimnasio2026"
+      },
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "368",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"170-v1UMKPu0ATHJHtK5jVB9/a3rsrQ\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "296c07f4-8b2c-45cc-9852-fecba71c6139"
+      },
+      "response": {
+        "data": {
+          "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImNvcnJlbyI6ImFkbWluQGl0c29uLm14Iiwicm9sIjoiYWRtaW4iLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.UwQmqWPuTS0iagrqOGPv_FERpffqir5me2Pll27ofIM",
+          "token_type": "Bearer",
+          "expires_in": 3600
+        },
+        "meta": {
+          "ruta": "/auth/login",
+          "duracionMs": 73,
+          "timestamp": "2026-10-06T03:18:01.594Z"
+        }
+      }
+    },
+    {
+      "title": "P2-04 Login con correo que no existe",
+      "method": "POST",
+      "route": "/auth/login",
+      "requestHeaders": {},
+      "body": {
+        "correo": "nadie@itson.mx",
+        "password": "gimnasio2026"
+      },
+      "status": 401,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "76",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"4c-VNR5HshxZd+noOePBDtLT0VkBaY\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "f26b046d-df2c-4c21-b185-715e48447b45"
+      },
+      "response": {
+        "message": "Credenciales invalidas",
+        "error": "Unauthorized",
+        "statusCode": 401
+      }
+    },
+    {
+      "title": "P2-05 Login con contrasena incorrecta",
+      "method": "POST",
+      "route": "/auth/login",
+      "requestHeaders": {},
+      "body": {
+        "correo": "karla@itson.mx",
+        "password": "otra-cosa"
+      },
+      "status": 401,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "76",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"4c-VNR5HshxZd+noOePBDtLT0VkBaY\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "bedfd136-c0ab-4eea-9b45-4b1c0f696fcc"
+      },
+      "response": {
+        "message": "Credenciales invalidas",
+        "error": "Unauthorized",
+        "statusCode": 401
+      }
+    },
+    {
+      "title": "P2-06 GET /auth/yo con token",
+      "method": "GET",
+      "route": "/auth/yo",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImNvcnJlbyI6ImthcmxhQGl0c29uLm14Iiwicm9sIjoibWllbWJybyIsIm1pZW1icm9JZCI6MSwiaWF0IjoxNzkxMjU2NjgxLCJleHAiOjE3OTEyNjAyODF9.jKqlp6hrWyn6Q8bDO5DlCh6EXyAQWm1DLJMUvARnGqI"
+      },
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "189",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"bd-VR+9GxIHeuGZTZ0O04geAMCriXw\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "76fce86b-09f9-46ec-8a8e-7c25024ee57e"
+      },
+      "response": {
+        "data": {
+          "sub": 1,
+          "correo": "karla@itson.mx",
+          "rol": "miembro",
+          "miembroId": 1,
+          "iat": 1791256681,
+          "exp": 1791260281
+        },
+        "meta": {
+          "ruta": "/auth/yo",
+          "duracionMs": 0,
+          "timestamp": "2026-10-06T03:18:01.675Z"
+        }
+      }
+    },
+    {
+      "title": "P2-07 Token con payload alterado (rol admin)",
+      "method": "GET",
+      "route": "/auth/yo",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImNvcnJlbyI6ImthcmxhQGl0c29uLm14Iiwicm9sIjoiYWRtaW4iLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.jKqlp6hrWyn6Q8bDO5DlCh6EXyAQWm1DLJMUvARnGqI"
+      },
+      "status": 401,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "43",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"2b-dGnJzt6gv1nJjX6DJ9RztDWptng\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "f7fbe120-d996-4d18-9fe4-8af6a54aef19"
+      },
+      "response": {
+        "message": "Unauthorized",
+        "statusCode": 401
+      }
+    },
+    {
+      "title": "P2-08 Token basura",
+      "method": "GET",
+      "route": "/inscripciones",
+      "requestHeaders": {
+        "Authorization": "Bearer no.es.token"
+      },
+      "status": 401,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "43",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"2b-dGnJzt6gv1nJjX6DJ9RztDWptng\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "d47a50a6-79e5-49b3-86a8-4a13796a0681"
+      },
+      "response": {
+        "message": "Unauthorized",
+        "statusCode": 401
+      }
+    },
+    {
+      "title": "P1-01 Karla se inscribe a si misma",
+      "method": "POST",
+      "route": "/inscripciones",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImNvcnJlbyI6ImthcmxhQGl0c29uLm14Iiwicm9sIjoibWllbWJybyIsIm1pZW1icm9JZCI6MSwiaWF0IjoxNzkxMjU2NjgxLCJleHAiOjE3OTEyNjAyODF9.jKqlp6hrWyn6Q8bDO5DlCh6EXyAQWm1DLJMUvARnGqI"
+      },
+      "body": {
+        "horarioId": 1,
+        "miembroId": 1
+      },
+      "status": 201,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "193",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"c1-+OhYF3/vcESwKNUOKCzjZ2RCt6Q\"",
+        "keep-alive": "timeout=5",
+        "location": "/inscripciones/1",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "d735bb3e-643d-47c5-9171-fb3d476a8a1e"
+      },
+      "response": {
+        "data": {
+          "id": 1,
+          "horarioId": 1,
+          "miembroId": 1,
+          "estado": "confirmada",
+          "creadaEn": "2026-10-06T03:18:01.716Z"
+        },
+        "meta": {
+          "ruta": "/inscripciones",
+          "duracionMs": 40,
+          "timestamp": "2026-10-06T03:18:01.721Z"
+        }
+      }
+    },
+    {
+      "title": "P2-09 Karla intenta inscribir a Sofia (miembro 3)",
+      "method": "POST",
+      "route": "/inscripciones",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImNvcnJlbyI6ImthcmxhQGl0c29uLm14Iiwicm9sIjoibWllbWJybyIsIm1pZW1icm9JZCI6MSwiaWF0IjoxNzkxMjU2NjgxLCJleHAiOjE3OTEyNjAyODF9.jKqlp6hrWyn6Q8bDO5DlCh6EXyAQWm1DLJMUvARnGqI"
+      },
+      "body": {
+        "horarioId": 2,
+        "miembroId": 3
+      },
+      "status": 403,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "85",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"55-Hi0M48/Q3E/Bg9QDUlKLSndeoPc\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "13825190-3a39-45ba-9a84-a7a51f65dcb7"
+      },
+      "response": {
+        "message": "Solo puedes inscribirte a ti mismo",
+        "error": "Forbidden",
+        "statusCode": 403
+      }
+    },
+    {
+      "title": "P1-02 El entrenador inscribe a Omar, se llena el cupo",
+      "method": "POST",
+      "route": "/inscripciones",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImNvcnJlbyI6ImFuYUBpdHNvbi5teCIsInJvbCI6ImVudHJlbmFkb3IiLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.3lventSzhJ_flXFA_1_yJEisfkruGfb1236-AQMaBfc"
+      },
+      "body": {
+        "horarioId": 1,
+        "miembroId": 2
+      },
+      "status": 201,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "193",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"c1-7T38qUMoVAHSYkXXC6mN3ATuE5g\"",
+        "keep-alive": "timeout=5",
+        "location": "/inscripciones/2",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "df6fc54a-52a5-4b04-892b-4970c69a5bea"
+      },
+      "response": {
+        "data": {
+          "id": 2,
+          "horarioId": 1,
+          "miembroId": 2,
+          "estado": "confirmada",
+          "creadaEn": "2026-10-06T03:18:01.738Z"
+        },
+        "meta": {
+          "ruta": "/inscripciones",
+          "duracionMs": 15,
+          "timestamp": "2026-10-06T03:18:01.742Z"
+        }
+      }
+    },
+    {
+      "title": "P1-03 Cupo lleno: 409 con la nueva forma",
+      "method": "POST",
+      "route": "/inscripciones",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImNvcnJlbyI6ImFkbWluQGl0c29uLm14Iiwicm9sIjoiYWRtaW4iLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.UwQmqWPuTS0iagrqOGPv_FERpffqir5me2Pll27ofIM"
+      },
+      "body": {
+        "horarioId": 1,
+        "miembroId": 3
+      },
+      "status": 409,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "168",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"a8-PEwOFV6SHTCSOiXsDnfHBtku+5o\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "88253a78-ed31-4ded-9082-403c7616fdb1"
+      },
+      "response": {
+        "statusCode": 409,
+        "error": "CupoLlenoError",
+        "message": "El horario 1 ya tiene 2 inscripciones confirmadas",
+        "path": "/inscripciones",
+        "timestamp": "2026-10-06T03:18:01.748Z"
+      }
+    },
+    {
+      "title": "P1-04 Inscripcion duplicada",
+      "method": "POST",
+      "route": "/inscripciones",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImNvcnJlbyI6ImthcmxhQGl0c29uLm14Iiwicm9sIjoibWllbWJybyIsIm1pZW1icm9JZCI6MSwiaWF0IjoxNzkxMjU2NjgxLCJleHAiOjE3OTEyNjAyODF9.jKqlp6hrWyn6Q8bDO5DlCh6EXyAQWm1DLJMUvARnGqI"
+      },
+      "body": {
+        "horarioId": 1,
+        "miembroId": 1
+      },
+      "status": 409,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "175",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"af-ROVbm0OaJsZY/u8nwellvySvXlA\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "4487a886-3952-4099-9fa3-54eff64a09df"
+      },
+      "response": {
+        "statusCode": 409,
+        "error": "InscripcionDuplicadaError",
+        "message": "El miembro 1 ya esta inscrito en el horario 1",
+        "path": "/inscripciones",
+        "timestamp": "2026-10-06T03:18:01.753Z"
+      }
+    },
+    {
+      "title": "P1-05 Horario inexistente",
+      "method": "POST",
+      "route": "/inscripciones",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImNvcnJlbyI6ImthcmxhQGl0c29uLm14Iiwicm9sIjoibWllbWJybyIsIm1pZW1icm9JZCI6MSwiaWF0IjoxNzkxMjU2NjgxLCJleHAiOjE3OTEyNjAyODF9.jKqlp6hrWyn6Q8bDO5DlCh6EXyAQWm1DLJMUvARnGqI"
+      },
+      "body": {
+        "horarioId": 99,
+        "miembroId": 1
+      },
+      "status": 404,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "152",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"98-XqApFdiGWFmAQS2MK85UQqOPnrQ\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "f94c1e3a-8c5b-4c4e-9f48-8413c6f6fa9e"
+      },
+      "response": {
+        "statusCode": 404,
+        "error": "HorarioNoEncontradoError",
+        "message": "No existe el horario 99",
+        "path": "/inscripciones",
+        "timestamp": "2026-10-06T03:18:01.755Z"
+      }
+    },
+    {
+      "title": "P1-06 Miembro inexistente",
+      "method": "POST",
+      "route": "/inscripciones",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImNvcnJlbyI6ImFkbWluQGl0c29uLm14Iiwicm9sIjoiYWRtaW4iLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.UwQmqWPuTS0iagrqOGPv_FERpffqir5me2Pll27ofIM"
+      },
+      "body": {
+        "horarioId": 3,
+        "miembroId": 99
+      },
+      "status": 404,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "152",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"98-xYzadKXqYCXkS4Y9Dpl2lNNdSkM\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "b891ae04-5279-417a-847e-44db00702413"
+      },
+      "response": {
+        "statusCode": 404,
+        "error": "MiembroNoEncontradoError",
+        "message": "No existe el miembro 99",
+        "path": "/inscripciones",
+        "timestamp": "2026-10-06T03:18:01.759Z"
+      }
+    },
+    {
+      "title": "P1-07 Validacion sigue en 400",
+      "method": "POST",
+      "route": "/inscripciones",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImNvcnJlbyI6ImFkbWluQGl0c29uLm14Iiwicm9sIjoiYWRtaW4iLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.UwQmqWPuTS0iagrqOGPv_FERpffqir5me2Pll27ofIM"
+      },
+      "body": {
+        "horarioId": "hola"
+      },
+      "status": 400,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "200",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"c8-yMaUmeRmYmEwU6U0W8QLRzcEzT8\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "f6146b0a-1f4c-4b22-ba0e-0abc3dfa001f"
+      },
+      "response": {
+        "message": [
+          "horarioId must not be less than 1",
+          "horarioId must be an integer number",
+          "miembroId must not be less than 1",
+          "miembroId must be an integer number"
+        ],
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "title": "P1-08 X-Request-Id generado",
+      "method": "GET",
+      "route": "/clases",
+      "requestHeaders": {},
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "182",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"b6-LH5U4VQBcrhq7n/MIe8v/1v4DLQ\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "0717947a-c7ea-4de6-b016-b285dbe61068"
+      },
+      "response": {
+        "data": [
+          {
+            "id": 1,
+            "nombre": "Yoga",
+            "descripcion": null
+          },
+          {
+            "id": 2,
+            "nombre": "Spinning",
+            "descripcion": null
+          }
+        ],
+        "meta": {
+          "ruta": "/clases",
+          "duracionMs": 1,
+          "timestamp": "2026-10-06T03:18:01.763Z"
+        }
+      }
+    },
+    {
+      "title": "P1-09 X-Request-Id que manda el cliente",
+      "method": "GET",
+      "route": "/clases",
+      "requestHeaders": {
+        "X-Request-Id": "practica10-prueba-123"
+      },
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "182",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"b6-OBYUVywjE1Upc0T/AcZM/kgyQwU\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "practica10-prueba-123"
+      },
+      "response": {
+        "data": [
+          {
+            "id": 1,
+            "nombre": "Yoga",
+            "descripcion": null
+          },
+          {
+            "id": 2,
+            "nombre": "Spinning",
+            "descripcion": null
+          }
+        ],
+        "meta": {
+          "ruta": "/clases",
+          "duracionMs": 1,
+          "timestamp": "2026-10-06T03:18:01.766Z"
+        }
+      }
+    },
+    {
+      "title": "P1-10 Respuesta con sobre",
+      "method": "GET",
+      "route": "/clases",
+      "requestHeaders": {},
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "182",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"b6-ZFDQDQT2+42XlyHo2WOV6k23YXE\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "f6b7a466-d272-4db0-8a6a-9500769b0774"
+      },
+      "response": {
+        "data": [
+          {
+            "id": 1,
+            "nombre": "Yoga",
+            "descripcion": null
+          },
+          {
+            "id": 2,
+            "nombre": "Spinning",
+            "descripcion": null
+          }
+        ],
+        "meta": {
+          "ruta": "/clases",
+          "duracionMs": 1,
+          "timestamp": "2026-10-06T03:18:01.768Z"
+        }
+      }
+    },
+    {
+      "title": "P1-11 CORS http://localhost:5173",
+      "method": "GET",
+      "route": "/clases",
+      "requestHeaders": {
+        "Origin": "http://localhost:5173"
+      },
+      "status": 200,
+      "headers": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "182",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"b6-74d+xHVuk/ss5i+C58RTsUVMBRw\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "6d137480-a954-4a81-9e38-57baa532e13c"
+      },
+      "response": {
+        "data": [
+          {
+            "id": 1,
+            "nombre": "Yoga",
+            "descripcion": null
+          },
+          {
+            "id": 2,
+            "nombre": "Spinning",
+            "descripcion": null
+          }
+        ],
+        "meta": {
+          "ruta": "/clases",
+          "duracionMs": 1,
+          "timestamp": "2026-10-06T03:18:01.770Z"
+        }
+      }
+    },
+    {
+      "title": "P1-12 CORS http://localhost:4000",
+      "method": "GET",
+      "route": "/clases",
+      "requestHeaders": {
+        "Origin": "http://localhost:4000"
+      },
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "182",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"b6-C8dfE5KAGTOA4ccxz0DpAxCkuMQ\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "6202ff2d-79bd-4bc4-b8d3-a4f678e44b09"
+      },
+      "response": {
+        "data": [
+          {
+            "id": 1,
+            "nombre": "Yoga",
+            "descripcion": null
+          },
+          {
+            "id": 2,
+            "nombre": "Spinning",
+            "descripcion": null
+          }
+        ],
+        "meta": {
+          "ruta": "/clases",
+          "duracionMs": 0,
+          "timestamp": "2026-10-06T03:18:01.771Z"
+        }
+      }
+    },
+    {
+      "title": "P1-13 Preflight permitido",
+      "method": "OPTIONS",
+      "route": "/inscripciones",
+      "requestHeaders": {
+        "Origin": "http://localhost:5173",
+        "Access-Control-Request-Method": "POST",
+        "Access-Control-Request-Headers": "content-type,authorization"
+      },
+      "status": 204,
+      "headers": {
+        "access-control-allow-headers": "content-type,authorization",
+        "access-control-allow-methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "0",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "keep-alive": "timeout=5",
+        "vary": "Origin, Access-Control-Request-Headers",
+        "x-powered-by": "Express"
+      },
+      "response": ""
+    },
+    {
+      "title": "T-01 Cancelar sin token",
+      "method": "DELETE",
+      "route": "/inscripciones/1",
+      "requestHeaders": {},
+      "status": 401,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "43",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"2b-dGnJzt6gv1nJjX6DJ9RztDWptng\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "645a121c-067d-40f3-961f-caa2e059eb29"
+      },
+      "response": {
+        "message": "Unauthorized",
+        "statusCode": 401
+      }
+    },
+    {
+      "title": "T-02 Cancelar con miembro",
+      "method": "DELETE",
+      "route": "/inscripciones/1",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImNvcnJlbyI6ImthcmxhQGl0c29uLm14Iiwicm9sIjoibWllbWJybyIsIm1pZW1icm9JZCI6MSwiaWF0IjoxNzkxMjU2NjgxLCJleHAiOjE3OTEyNjAyODF9.jKqlp6hrWyn6Q8bDO5DlCh6EXyAQWm1DLJMUvARnGqI"
+      },
+      "status": 403,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "95",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"5f-8iaC2hfNTC4AXOvpAGJYZlwV67E\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "573c0adb-0daf-40c3-ba1e-35f26f9ddc4f"
+      },
+      "response": {
+        "message": "Esta accion requiere rol: entrenador o admin",
+        "error": "Forbidden",
+        "statusCode": 403
+      }
+    },
+    {
+      "title": "T-03 Cancelar con entrenador",
+      "method": "DELETE",
+      "route": "/inscripciones/1",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImNvcnJlbyI6ImFuYUBpdHNvbi5teCIsInJvbCI6ImVudHJlbmFkb3IiLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.3lventSzhJ_flXFA_1_yJEisfkruGfb1236-AQMaBfc"
+      },
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "193",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"c1-+j4E4G8yA7NHxATb2kpCix8YH4Q\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "023385c1-c3c9-4948-9b7c-6fe007c323f4"
+      },
+      "response": {
+        "data": {
+          "id": 1,
+          "horarioId": 1,
+          "miembroId": 1,
+          "estado": "cancelada",
+          "creadaEn": "2026-10-06T03:18:01.716Z"
+        },
+        "meta": {
+          "ruta": "/inscripciones/1",
+          "duracionMs": 7,
+          "timestamp": "2026-10-06T03:18:01.783Z"
+        }
+      }
+    },
+    {
+      "title": "T-04 Cancelar con admin",
+      "method": "DELETE",
+      "route": "/inscripciones/2",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImNvcnJlbyI6ImFkbWluQGl0c29uLm14Iiwicm9sIjoiYWRtaW4iLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.UwQmqWPuTS0iagrqOGPv_FERpffqir5me2Pll27ofIM"
+      },
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "193",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"c1-ps/LxsvDjCAniBCSFIfIAHKKo1E\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "83d392e5-c60e-4ff2-aa2e-6dd97b48eaa1"
+      },
+      "response": {
+        "data": {
+          "id": 2,
+          "horarioId": 1,
+          "miembroId": 2,
+          "estado": "cancelada",
+          "creadaEn": "2026-10-06T03:18:01.738Z"
+        },
+        "meta": {
+          "ruta": "/inscripciones/2",
+          "duracionMs": 6,
+          "timestamp": "2026-10-06T03:18:01.790Z"
+        }
+      }
+    },
+    {
+      "title": "Reinscribir cancelada sin violar clave unica",
+      "method": "POST",
+      "route": "/inscripciones",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImNvcnJlbyI6ImthcmxhQGl0c29uLm14Iiwicm9sIjoibWllbWJybyIsIm1pZW1icm9JZCI6MSwiaWF0IjoxNzkxMjU2NjgxLCJleHAiOjE3OTEyNjAyODF9.jKqlp6hrWyn6Q8bDO5DlCh6EXyAQWm1DLJMUvARnGqI"
+      },
+      "body": {
+        "horarioId": 1,
+        "miembroId": 1
+      },
+      "status": 201,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "193",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"c1-liubzXr+Vdts0Va5EnJPBYU5UxQ\"",
+        "keep-alive": "timeout=5",
+        "location": "/inscripciones/1",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "e0095b41-8359-4cc6-8bc7-c0d23d6f7700"
+      },
+      "response": {
+        "data": {
+          "id": 1,
+          "horarioId": 1,
+          "miembroId": 1,
+          "estado": "confirmada",
+          "creadaEn": "2026-10-06T03:18:01.798Z"
+        },
+        "meta": {
+          "ruta": "/inscripciones",
+          "duracionMs": 11,
+          "timestamp": "2026-10-06T03:18:01.803Z"
+        }
+      }
+    },
+    {
+      "title": "P2-10 Registro de una cuenta nueva",
+      "method": "POST",
+      "route": "/auth/registro",
+      "requestHeaders": {},
+      "body": {
+        "correo": "Luis@ITSON.mx",
+        "password": "secreto123"
+      },
+      "status": 201,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "372",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"174-eGzLdvMgzC70dn4wiF0izvIyD2I\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "66992323-7331-46c7-871a-507c2324f07c"
+      },
+      "response": {
+        "data": {
+          "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImNvcnJlbyI6Imx1aXNAaXRzb24ubXgiLCJyb2wiOiJtaWVtYnJvIiwibWllbWJyb0lkIjpudWxsLCJpYXQiOjE3OTEyNTY2ODEsImV4cCI6MTc5MTI2MDI4MX0.mvIwEED5v2zLP3zHQtqsSmi-xYt6jsLTN69hR-AASuo",
+          "token_type": "Bearer",
+          "expires_in": 3600
+        },
+        "meta": {
+          "ruta": "/auth/registro",
+          "duracionMs": 78,
+          "timestamp": "2026-10-06T03:18:01.882Z"
+        }
+      }
+    },
+    {
+      "title": "P2-11 Registro con correo repetido",
+      "method": "POST",
+      "route": "/auth/registro",
+      "requestHeaders": {},
+      "body": {
+        "correo": "luis@itson.mx",
+        "password": "secreto123"
+      },
+      "status": 409,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "79",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"4f-EkXe4I3LH7PgPIsh2xaOIWzzDxo\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "b7d6a5b3-97a0-47f3-a92f-325e90c690db"
+      },
+      "response": {
+        "message": "Ese correo ya esta registrado",
+        "error": "Conflict",
+        "statusCode": 409
+      }
+    },
+    {
+      "title": "P2-12 Registro invalido",
+      "method": "POST",
+      "route": "/auth/registro",
+      "requestHeaders": {},
+      "body": {
+        "correo": "sin-arroba",
+        "password": "corta",
+        "rol": "dios"
+      },
+      "status": 400,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "183",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"b7-LMxlqhVdWetQmnDCYvG+Mn0Wc3I\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "ea1ed25d-cdbe-40f9-85c6-ef85c2943b7d"
+      },
+      "response": {
+        "message": [
+          "el correo no tiene un formato valido",
+          "la contrasena debe tener al menos 8 caracteres",
+          "rol debe ser miembro, entrenador o admin"
+        ],
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "title": "Listar inscripciones",
+      "method": "GET",
+      "route": "/inscripciones",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImNvcnJlbyI6ImFkbWluQGl0c29uLm14Iiwicm9sIjoiYWRtaW4iLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.UwQmqWPuTS0iagrqOGPv_FERpffqir5me2Pll27ofIM"
+      },
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "290",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"122-yZLpWk5VJyxmutWyfV+bqkG9RUs\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "6509c86a-8f9a-48f3-b464-5dd7ead36547"
+      },
+      "response": {
+        "data": [
+          {
+            "id": 1,
+            "horarioId": 1,
+            "miembroId": 1,
+            "estado": "confirmada",
+            "creadaEn": "2026-10-06T03:18:01.798Z"
+          },
+          {
+            "id": 2,
+            "horarioId": 1,
+            "miembroId": 2,
+            "estado": "cancelada",
+            "creadaEn": "2026-10-06T03:18:01.738Z"
+          }
+        ],
+        "meta": {
+          "ruta": "/inscripciones",
+          "duracionMs": 2,
+          "timestamp": "2026-10-06T03:18:01.890Z"
+        }
+      }
+    },
+    {
+      "title": "Crear clase sin token",
+      "method": "POST",
+      "route": "/clases",
+      "requestHeaders": {},
+      "body": {
+        "nombre": "Funcional"
+      },
+      "status": 401,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "43",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"2b-dGnJzt6gv1nJjX6DJ9RztDWptng\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "7e942293-614d-4b5d-87b0-1a0a3da1d0c5"
+      },
+      "response": {
+        "message": "Unauthorized",
+        "statusCode": 401
+      }
+    },
+    {
+      "title": "Crear clase",
+      "method": "POST",
+      "route": "/clases",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImNvcnJlbyI6ImFkbWluQGl0c29uLm14Iiwicm9sIjoiYWRtaW4iLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.UwQmqWPuTS0iagrqOGPv_FERpffqir5me2Pll27ofIM"
+      },
+      "body": {
+        "nombre": "Funcional"
+      },
+      "status": 201,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "137",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"89-g3yncykbb0ids2sd9f60zasEUVA\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "60b8a510-30ec-438d-98cb-4c8d19303510"
+      },
+      "response": {
+        "data": {
+          "id": 3,
+          "nombre": "Funcional",
+          "descripcion": null
+        },
+        "meta": {
+          "ruta": "/clases",
+          "duracionMs": 5,
+          "timestamp": "2026-10-06T03:18:01.897Z"
+        }
+      }
+    },
+    {
+      "title": "Buscar clase",
+      "method": "GET",
+      "route": "/clases/3",
+      "requestHeaders": {},
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "139",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"8b-+3IAf13Bf2OpKZpzepOfLmFthuY\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "f061609f-21ca-4a00-b400-4ba71115df23"
+      },
+      "response": {
+        "data": {
+          "id": 3,
+          "nombre": "Funcional",
+          "descripcion": null
+        },
+        "meta": {
+          "ruta": "/clases/3",
+          "duracionMs": 2,
+          "timestamp": "2026-10-06T03:18:01.900Z"
+        }
+      }
+    },
+    {
+      "title": "Actualizar clase",
+      "method": "PATCH",
+      "route": "/clases/3",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImNvcnJlbyI6ImFkbWluQGl0c29uLm14Iiwicm9sIjoiYWRtaW4iLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.UwQmqWPuTS0iagrqOGPv_FERpffqir5me2Pll27ofIM"
+      },
+      "body": {
+        "nombre": "Funcional Avanzado"
+      },
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "148",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"94-F76IEg6gLlhZD+TEA8Iq/eRH/HI\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "78f80284-3f07-4b03-8a44-98e0ae7eaa69"
+      },
+      "response": {
+        "data": {
+          "id": 3,
+          "nombre": "Funcional Avanzado",
+          "descripcion": null
+        },
+        "meta": {
+          "ruta": "/clases/3",
+          "duracionMs": 9,
+          "timestamp": "2026-10-06T03:18:01.911Z"
+        }
+      }
+    },
+    {
+      "title": "Clase inexistente",
+      "method": "GET",
+      "route": "/clases/99",
+      "requestHeaders": {},
+      "status": 404,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "72",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"48-MwL9dGhRyGx3/KIOp5VTMxO7POA\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "33ed45b7-5891-405a-b43f-e941f62c2622"
+      },
+      "response": {
+        "message": "No existe la clase 99",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "title": "Eliminar clase",
+      "method": "DELETE",
+      "route": "/clases/3",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImNvcnJlbyI6ImFkbWluQGl0c29uLm14Iiwicm9sIjoiYWRtaW4iLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.UwQmqWPuTS0iagrqOGPv_FERpffqir5me2Pll27ofIM"
+      },
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "148",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"94-d1TrCQpAatlRcAhdAK1yQzg+a7k\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "d41ac1fd-c439-44cf-955f-55a5fe93fca2"
+      },
+      "response": {
+        "data": {
+          "id": 3,
+          "nombre": "Funcional Avanzado",
+          "descripcion": null
+        },
+        "meta": {
+          "ruta": "/clases/3",
+          "duracionMs": 6,
+          "timestamp": "2026-10-06T03:18:01.924Z"
+        }
+      }
+    },
+    {
+      "title": "Miembros sin token",
+      "method": "GET",
+      "route": "/miembros",
+      "requestHeaders": {},
+      "status": 401,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "43",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"2b-dGnJzt6gv1nJjX6DJ9RztDWptng\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "094f7378-26d3-4006-87eb-bf4b389945b7"
+      },
+      "response": {
+        "message": "Unauthorized",
+        "statusCode": 401
+      }
+    },
+    {
+      "title": "Listar miembros",
+      "method": "GET",
+      "route": "/miembros",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImNvcnJlbyI6ImFkbWluQGl0c29uLm14Iiwicm9sIjoiYWRtaW4iLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.UwQmqWPuTS0iagrqOGPv_FERpffqir5me2Pll27ofIM"
+      },
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "371",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"173-gmmzG+lWygUFVgo0nRtyJnrYnpU\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "4efd43a0-013b-4d5c-8470-64a03ba44a83"
+      },
+      "response": {
+        "data": [
+          {
+            "id": 1,
+            "nombre": "Karla Duarte",
+            "correo": "karla@itson.mx",
+            "membresia": "premium",
+            "activo": true
+          },
+          {
+            "id": 2,
+            "nombre": "Omar Valdez",
+            "correo": "omar@itson.mx",
+            "membresia": "plus",
+            "activo": true
+          },
+          {
+            "id": 3,
+            "nombre": "Sofia Ibarra",
+            "correo": "sofia@itson.mx",
+            "membresia": "basica",
+            "activo": true
+          }
+        ],
+        "meta": {
+          "ruta": "/miembros",
+          "duracionMs": 2,
+          "timestamp": "2026-10-06T03:18:01.928Z"
+        }
+      }
+    },
+    {
+      "title": "Crear miembro",
+      "method": "POST",
+      "route": "/miembros",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImNvcnJlbyI6ImFkbWluQGl0c29uLm14Iiwicm9sIjoiYWRtaW4iLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.UwQmqWPuTS0iagrqOGPv_FERpffqir5me2Pll27ofIM"
+      },
+      "body": {
+        "nombre": "Luis Prueba",
+        "correo": "luis@itson.mx",
+        "membresia": "basica"
+      },
+      "status": 201,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "182",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"b6-RsVAFiyc9lNdmOvq9i9iwilmkXc\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "f3ab0cec-325d-4f49-820c-86df9c0b954d"
+      },
+      "response": {
+        "data": {
+          "id": 4,
+          "nombre": "Luis Prueba",
+          "correo": "luis@itson.mx",
+          "membresia": "basica",
+          "activo": true
+        },
+        "meta": {
+          "ruta": "/miembros",
+          "duracionMs": 5,
+          "timestamp": "2026-10-06T03:18:01.934Z"
+        }
+      }
+    },
+    {
+      "title": "Dar de baja miembro",
+      "method": "PATCH",
+      "route": "/miembros/4",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImNvcnJlbyI6ImFkbWluQGl0c29uLm14Iiwicm9sIjoiYWRtaW4iLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.UwQmqWPuTS0iagrqOGPv_FERpffqir5me2Pll27ofIM"
+      },
+      "body": {
+        "activo": false
+      },
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "185",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"b9-CI5GSzKNuhXSlv3VIqQXlb9tfNg\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "bf23b005-c55c-43ab-8085-5997e50b1ec6"
+      },
+      "response": {
+        "data": {
+          "id": 4,
+          "nombre": "Luis Prueba",
+          "correo": "luis@itson.mx",
+          "membresia": "basica",
+          "activo": false
+        },
+        "meta": {
+          "ruta": "/miembros/4",
+          "duracionMs": 6,
+          "timestamp": "2026-10-06T03:18:01.942Z"
+        }
+      }
+    },
+    {
+      "title": "Eliminar miembro",
+      "method": "DELETE",
+      "route": "/miembros/4",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImNvcnJlbyI6ImFkbWluQGl0c29uLm14Iiwicm9sIjoiYWRtaW4iLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.UwQmqWPuTS0iagrqOGPv_FERpffqir5me2Pll27ofIM"
+      },
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "185",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"b9-XeCur04+FYiko7gqyYpLUaGXdNU\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "84ca8cc4-815c-4c23-9f48-1a191213c8d5"
+      },
+      "response": {
+        "data": {
+          "id": 4,
+          "nombre": "Luis Prueba",
+          "correo": "luis@itson.mx",
+          "membresia": "basica",
+          "activo": false
+        },
+        "meta": {
+          "ruta": "/miembros/4",
+          "duracionMs": 5,
+          "timestamp": "2026-10-06T03:18:01.948Z"
+        }
+      }
+    },
+    {
+      "title": "Listar horarios",
+      "method": "GET",
+      "route": "/horarios",
+      "requestHeaders": {},
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "389",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"185-9UjuqzC6foDC9tDs5RPJJ6ZQsls\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "ce16b065-d158-41cb-b424-5bc7a34d23e5"
+      },
+      "response": {
+        "data": [
+          {
+            "id": 1,
+            "claseId": 1,
+            "dia": "lunes",
+            "horaInicio": "07:00",
+            "cupoMaximo": 2,
+            "entrenador": "Ana Robles"
+          },
+          {
+            "id": 2,
+            "claseId": 1,
+            "dia": "miercoles",
+            "horaInicio": "07:00",
+            "cupoMaximo": 3,
+            "entrenador": "Ana Robles"
+          },
+          {
+            "id": 3,
+            "claseId": 2,
+            "dia": "martes",
+            "horaInicio": "19:00",
+            "cupoMaximo": 4,
+            "entrenador": "Luis Fierro"
+          }
+        ],
+        "meta": {
+          "ruta": "/horarios",
+          "duracionMs": 1,
+          "timestamp": "2026-10-06T03:18:01.950Z"
+        }
+      }
+    },
+    {
+      "title": "Crear horario",
+      "method": "POST",
+      "route": "/horarios",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImNvcnJlbyI6ImFkbWluQGl0c29uLm14Iiwicm9sIjoiYWRtaW4iLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.UwQmqWPuTS0iagrqOGPv_FERpffqir5me2Pll27ofIM"
+      },
+      "body": {
+        "claseId": 2,
+        "dia": "jueves",
+        "horaInicio": "18:00",
+        "cupoMaximo": 5,
+        "entrenador": "Luis Fierro"
+      },
+      "status": 201,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "189",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"bd-istWdW4OIiC4z0z+d0yE7y1Vqms\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "222d9b83-adc8-432b-8939-589b06674f35"
+      },
+      "response": {
+        "data": {
+          "id": 4,
+          "claseId": 2,
+          "dia": "jueves",
+          "horaInicio": "18:00",
+          "cupoMaximo": 5,
+          "entrenador": "Luis Fierro"
+        },
+        "meta": {
+          "ruta": "/horarios",
+          "duracionMs": 5,
+          "timestamp": "2026-10-06T03:18:01.956Z"
+        }
+      }
+    },
+    {
+      "title": "Horario inexistente",
+      "method": "GET",
+      "route": "/horarios/99",
+      "requestHeaders": {},
+      "status": 404,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "74",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"4a-APsrhQWbkmQ+N0LLcBAqQhcODt8\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "4865d023-01d4-4e21-8b83-ce1569752dc6"
+      },
+      "response": {
+        "message": "No existe el horario 99",
+        "error": "Not Found",
+        "statusCode": 404
+      }
+    },
+    {
+      "title": "Campo desconocido",
+      "method": "POST",
+      "route": "/clases",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImNvcnJlbyI6ImFkbWluQGl0c29uLm14Iiwicm9sIjoiYWRtaW4iLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.UwQmqWPuTS0iagrqOGPv_FERpffqir5me2Pll27ofIM"
+      },
+      "body": {
+        "nombre": "Yoga",
+        "administrador": true
+      },
+      "status": 400,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "94",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"5e-ZuzakF/nPFvNdgJI1PTb6VtSDC0\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "67bd0818-8938-4f8c-8560-01740cbe616f"
+      },
+      "response": {
+        "message": [
+          "property administrador should not exist"
+        ],
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "title": "Parametro invalido",
+      "method": "GET",
+      "route": "/clases/hola",
+      "requestHeaders": {},
+      "status": 400,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "99",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"63-fbYqGzam3W3FhpKYGVugOXQk+/M\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "08d123ae-e915-45c2-a085-801013f1d4e0"
+      },
+      "response": {
+        "message": "Validation failed (numeric string is expected)",
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    },
+    {
+      "title": "Correo duplicado (Prisma P2002)",
+      "method": "POST",
+      "route": "/miembros",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImNvcnJlbyI6ImFkbWluQGl0c29uLm14Iiwicm9sIjoiYWRtaW4iLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.UwQmqWPuTS0iagrqOGPv_FERpffqir5me2Pll27ofIM"
+      },
+      "body": {
+        "nombre": "Otra",
+        "correo": "karla@itson.mx",
+        "membresia": "basica"
+      },
+      "status": 409,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "132",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"84-MA0B9zM0TJDpTo49hEu2CSzkNEY\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "ab6a8c72-08bc-4833-aa9d-6f2a8cabe1ee"
+      },
+      "response": {
+        "statusCode": 409,
+        "message": "Ya existe un registro con esos datos unicos",
+        "path": "/miembros",
+        "timestamp": "2026-10-06T03:18:01.969Z"
+      }
+    },
+    {
+      "title": "Eliminar registro relacionado (Prisma P2003)",
+      "method": "DELETE",
+      "route": "/clases/1",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImNvcnJlbyI6ImFkbWluQGl0c29uLm14Iiwicm9sIjoiYWRtaW4iLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.UwQmqWPuTS0iagrqOGPv_FERpffqir5me2Pll27ofIM"
+      },
+      "status": 409,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "148",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"94-1Wxs70Gp2uQV7ohzwnqbT7+fzPg\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "c560360b-f5fe-4665-8416-f3e00511b7d2"
+      },
+      "response": {
+        "statusCode": 409,
+        "message": "La operacion entra en conflicto con un registro relacionado",
+        "path": "/clases/1",
+        "timestamp": "2026-10-06T03:18:01.974Z"
+      }
+    },
+    {
+      "title": "P2-13 Documentacion en /docs",
+      "method": "GET",
+      "route": "/docs",
+      "requestHeaders": {},
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "3126",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"c36-CoJIbFAUj2LvfbhQh9ycBoxTpas\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express"
+      },
+      "response": "(HTML de Swagger UI)"
+    },
+    {
+      "title": "P2-14 Documento OpenAPI",
+      "method": "GET",
+      "route": "/docs-json",
+      "requestHeaders": {},
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "8614",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:01 GMT",
+        "etag": "W/\"21a6-ztd96AQcjGA/eM16mkM9HBykOJo\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express"
+      },
+      "response": {
+        "info": {
+          "title": "API del Gimnasio",
+          "description": "",
+          "version": "1.0",
+          "contact": {}
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "securitySchemes": {
+          "bearer": {
+            "scheme": "bearer",
+            "bearerFormat": "JWT",
+            "type": "http"
+          }
+        },
+        "rutas": [
+          "/",
+          "/auth/registro",
+          "/auth/login",
+          "/auth/yo",
+          "/clases",
+          "/clases/{id}",
+          "/inscripciones",
+          "/inscripciones/{id}",
+          "/miembros",
+          "/miembros/{id}",
+          "/horarios",
+          "/horarios/{id}"
+        ],
+        "RegistroDto": {
+          "type": "object",
+          "properties": {
+            "correo": {
+              "type": "string",
+              "format": "email"
+            },
+            "password": {
+              "type": "string",
+              "minLength": 8
+            },
+            "rol": {
+              "type": "string",
+              "enum": [
+                "miembro",
+                "entrenador",
+                "admin"
+              ]
+            },
+            "miembroId": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "correo",
+            "password"
+          ]
+        }
+      }
+    },
+    {
+      "title": "P2-15 Login de la cuenta registrada despues de reiniciar",
+      "method": "POST",
+      "route": "/auth/login",
+      "requestHeaders": {},
+      "body": {
+        "correo": "luis@itson.mx",
+        "password": "secreto123"
+      },
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "369",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:03 GMT",
+        "etag": "W/\"171-uS0pnt5dxmKBmegmFvot/EVEILY\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "448b45a8-8661-491e-9799-2078adccc81c"
+      },
+      "response": {
+        "data": {
+          "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImNvcnJlbyI6Imx1aXNAaXRzb24ubXgiLCJyb2wiOiJtaWVtYnJvIiwibWllbWJyb0lkIjpudWxsLCJpYXQiOjE3OTEyNTY2ODMsImV4cCI6MTc5MTI2MDI4M30.eAvL3nZvhBv7aORy4RD72DM01tNonDNXuC4sMJxbngM",
+          "token_type": "Bearer",
+          "expires_in": 3600
+        },
+        "meta": {
+          "ruta": "/auth/login",
+          "duracionMs": 89,
+          "timestamp": "2026-10-06T03:18:03.888Z"
+        }
+      }
+    },
+    {
+      "title": "P2-16 Persistencia de inscripciones despues de reiniciar",
+      "method": "GET",
+      "route": "/inscripciones/1",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImNvcnJlbyI6Imx1aXNAaXRzb24ubXgiLCJyb2wiOiJtaWVtYnJvIiwibWllbWJyb0lkIjpudWxsLCJpYXQiOjE3OTEyNTY2ODMsImV4cCI6MTc5MTI2MDI4M30.eAvL3nZvhBv7aORy4RD72DM01tNonDNXuC4sMJxbngM"
+      },
+      "status": 200,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "194",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:03 GMT",
+        "etag": "W/\"c2-FWpXcTkTabgwPo3KQvgnI5fxAZo\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "64cc00a6-01e9-4b6b-a9fe-e84bb8b55f38"
+      },
+      "response": {
+        "data": {
+          "id": 1,
+          "horarioId": 1,
+          "miembroId": 1,
+          "estado": "confirmada",
+          "creadaEn": "2026-10-06T03:18:01.798Z"
+        },
+        "meta": {
+          "ruta": "/inscripciones/1",
+          "duracionMs": 3,
+          "timestamp": "2026-10-06T03:18:03.894Z"
+        }
+      }
+    },
+    {
+      "title": "Horario de concurrencia",
+      "method": "POST",
+      "route": "/horarios",
+      "requestHeaders": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImNvcnJlbyI6ImFkbWluQGl0c29uLm14Iiwicm9sIjoiYWRtaW4iLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI1NjY4MSwiZXhwIjoxNzkxMjYwMjgxfQ.UwQmqWPuTS0iagrqOGPv_FERpffqir5me2Pll27ofIM"
+      },
+      "body": {
+        "claseId": 1,
+        "dia": "lunes",
+        "horaInicio": "12:00",
+        "cupoMaximo": 1,
+        "entrenador": "Ana"
+      },
+      "status": 201,
+      "headers": {
+        "access-control-expose-headers": "Location,X-Request-Id",
+        "connection": "keep-alive",
+        "content-length": "181",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Tue, 06 Oct 2026 03:18:03 GMT",
+        "etag": "W/\"b5-Jcu6eca1tYOrZVHy3+2irZKD8bA\"",
+        "keep-alive": "timeout=5",
+        "vary": "Origin",
+        "x-powered-by": "Express",
+        "x-request-id": "85a957ed-b10d-4d35-b54f-0842baa951b4"
+      },
+      "response": {
+        "data": {
+          "id": 5,
+          "claseId": 1,
+          "dia": "lunes",
+          "horaInicio": "12:00",
+          "cupoMaximo": 1,
+          "entrenador": "Ana"
+        },
+        "meta": {
+          "ruta": "/horarios",
+          "duracionMs": 14,
+          "timestamp": "2026-10-06T03:18:03.910Z"
+        }
+      }
+    }
+  ]
+}
